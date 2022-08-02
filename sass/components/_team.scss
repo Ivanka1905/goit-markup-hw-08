@@ -1,0 +1,77 @@
+.team {
+    background-color: var(--secondary-background-color);
+}
+
+.team__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.team__cards {
+    width: 100%;
+        @media screen and (min-width: 768px) {
+            width: calc((100% - 30px) / 2);
+        }
+        @media screen and (min-width: 1200px) {
+            width: calc((100% - 90px) / 4);
+        }
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    background-color: var(--primary-background-color);
+}
+
+
+.team-name {
+    padding: 30px 32px;
+    text-align: center;
+}
+
+.team-name__title {
+    margin-bottom: 10px;
+    color: var(--title-text-color);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+}
+
+.team-name__text {
+    font-size: 16px;
+    line-height: 1.19;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.our-team-soc-icon {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.soc-icon-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+    background-color: var(--accent-color);
+}
+    &:hover .soc-icon,
+    &:focus .soc-icon {
+    fill: #FFFFFF;
+}
+}
+
+.soc-icon {
+    width: 20px;
+    height: 20px;
+    fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+

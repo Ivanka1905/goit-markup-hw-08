@@ -1,0 +1,149 @@
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--dark-background-color);
+    .link:hover,
+    .link:focus {
+            color: var(--accent-color);
+        }
+}
+
+.footer-flex {
+    display: flex;
+}
+
+.footer-address {
+    margin-right: 70px;
+}
+
+.logo-for-footer {
+    margin-bottom: 20px;
+}
+
+
+address {
+    font-style: normal;
+}
+
+.footer-list {
+    margin-bottom: 9px;
+    &:last-child {
+            margin-bottom: 0;
+        }
+}
+
+.contacts {
+    color: var(--primary-background-color);
+}
+
+.mail {
+    color: var(--footer-font-color);
+}
+
+.footer-section-soc {
+    margin-right: 93px;
+    padding-top: 12px;
+}
+
+.footer-buttom {
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.14;
+    color: var(--primary-background-color);
+    text-transform: uppercase;
+}
+
+.footer-soc-icon-bg {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-right: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+            background-color: var(--accent-color);
+        }
+    &:last-child {
+    margin-right: 0;
+}
+}
+
+.footer-soc-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-background-color);
+}
+
+
+/* -------форма підписки на розсилку----- */
+.footer-form-frame {
+    padding-top: 12px;
+}
+
+.footer-form {
+    display: flex;
+    position: relative;
+    min-width: 570px;
+
+}
+
+.footer-label {
+    margin-right: 12px;
+}
+
+.footer-label-text {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-background-color);
+}
+
+.footer-label-input {
+    padding: 15px 16px;
+    min-width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-form-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    height: 50px;
+    padding: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--primary-background-color);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: center;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+}
+
+.icon-icon-send {
+    fill: var(--primary-background-color);
+}
