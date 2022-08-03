@@ -43,9 +43,12 @@ ul {
 
 img {
   display: block;
-  height: auto;
-  max-width: 100%;
+  height: 100%;
   width: 100%;
+}
+
+picture {
+  display: block;
 }
 
 .container {
@@ -54,6 +57,11 @@ img {
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+  }
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -74,6 +82,12 @@ img {
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+@media screen and (min-width: 320px) {
+  .section {
+    margin: 0;
+    padding: auto;
+  }
 }
 @media screen and (min-width: 1200px) {
   .section {
@@ -102,6 +116,7 @@ img {
 /* шапка сайту */
 .header {
   display: flex;
+  height: 60px;
   align-items: center;
 }
 .header .link:hover,
@@ -122,8 +137,14 @@ img {
   color: var(--accent-color);
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 24px;
+  line-height: 1.17;
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .logo__studio--black {
@@ -139,17 +160,7 @@ img {
 }
 
 .site-nav {
-  display: flex;
-  color: var(--title-text-color);
-  font-weight: 500;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-.site-nav li {
-  margin-right: 50px;
-}
-.site-nav li:last-child {
-  margin-right: 0;
+  display: none;
 }
 
 .site-nav__item {
@@ -175,16 +186,7 @@ img {
 }
 
 .contacts {
-  display: flex;
-  margin-left: auto;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-.contacts li:first-child {
-  margin-right: 50px;
+  display: none;
 }
 
 .contacts__link {
@@ -198,30 +200,76 @@ img {
   fill: currentColor;
 }
 
+.open-btn {
+  display: block;
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.mob-menu {
+  position: fixed;
+  display: block;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 100vh;
+  width: 100vw;
+  padding: 48px auto 48px 40px;
+}
+
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
   background-color: var(--dark-background-color);
-  max-width: 1600px;
+  width: 100%;
   height: 600px;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+@media screen and (min-width: 480px) and (min-device-pixel-ratio: 2), screen and (min-width: 480px) and (min-resolution: 192dpi), screen and (min-width: 480px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/img/hero/hero-480.jpg);
+  }
+}
+@media screen and (min-width: 786px) and (min-device-pixel-ratio: 2), screen and (min-width: 786px) and (min-resolution: 192dpi), screen and (min-width: 786px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/img/hero/hero-768.jpg);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/img/hero/hero-1600.jpg);
+  }
+}
 
 .hero__title {
-  width: 696px;
+  max-width: 360px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   color: var(--primary-background-color);
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.61;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+    max-width: 696px;
+  }
 }
 
 .button {
@@ -490,10 +538,22 @@ img {
 
 .footer-flex {
   display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  text-align: center;
 }
-
-.footer-address {
-  margin-right: 70px;
+@media screen and (min-width: 768px) {
+  .footer-flex {
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-flex {
+    flex-wrap: nowrap;
+    gap: 70px;
+    text-align: left;
+  }
 }
 
 .logo-for-footer {
@@ -505,7 +565,7 @@ address {
 }
 
 .footer-list {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 .footer-list:last-child {
   margin-bottom: 0;
@@ -519,26 +579,29 @@ address {
   color: var(--footer-font-color);
 }
 
-.footer-section-soc {
-  margin-right: 93px;
-  padding-top: 12px;
-}
-
 .footer-buttom {
+  display: flex;
   margin-bottom: 20px;
+  justify-content: center;
   font-weight: 700;
   line-height: 1.14;
   color: var(--primary-background-color);
   text-transform: uppercase;
 }
+@media screen and (min-width: 1200px) {
+  .footer-buttom {
+    text-align: left;
+    justify-content: left;
+  }
+}
 
 .footer-soc-icon-bg {
   display: flex;
   background: rgba(255, 255, 255, 0.1);
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
   padding: 12px;
-  margin-right: 10px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -547,8 +610,17 @@ address {
 .footer-soc-icon-bg:hover, .footer-soc-icon-bg:focus {
   background-color: var(--accent-color);
 }
-.footer-soc-icon-bg:last-child {
-  margin-right: 0;
+
+@media screen and (min-width: 768px) {
+  .footer-section-soc {
+    padding-top: 5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-section-soc {
+    padding-top: 12px;
+    padding-right: 23px;
+  }
 }
 
 .footer-soc-icon {
@@ -558,18 +630,15 @@ address {
 }
 
 /* -------форма підписки на розсилку----- */
-.footer-form-frame {
-  padding-top: 12px;
-}
-
 .footer-form {
   display: flex;
-  position: relative;
-  min-width: 570px;
+  flex-wrap: wrap;
+  align-items: center;
 }
-
-.footer-label {
-  margin-right: 12px;
+@media screen and (min-width: 1200px) {
+  .footer-form {
+    min-width: 570px;
+  }
 }
 
 .footer-label-text {
@@ -582,11 +651,23 @@ address {
   text-transform: uppercase;
   color: var(--primary-background-color);
 }
+@media screen and (min-width: 1200px) {
+  .footer-label-text {
+    padding-top: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-label-text--left {
+    text-align: left;
+  }
+}
 
 .footer-label-input {
   padding: 15px 16px;
-  min-width: 358px;
+  width: 100%;
   height: 50px;
+  margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: transparent;
@@ -594,16 +675,40 @@ address {
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
 }
+@media screen and (min-width: 320px) {
+  .footer-label-input {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-label-input {
+    width: 358px;
+    margin-bottom: 0;
+  }
+}
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 1200px) {
+  .input {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+}
 
 .footer-form-button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
+  width: 200px;
   height: 50px;
   padding: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -650,8 +755,8 @@ address {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 528px;
-  min-height: 581px;
+  width: 450px;
+  min-height: 609px;
   padding: 40px;
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -665,6 +770,12 @@ address {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    min-height: 521px;
+  }
 }
 
 .buttom-close-bg {
@@ -909,10 +1020,20 @@ form {
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: 0.03em;
-  padding: 63px 24px;
+  padding: 77px 24px;
   margin-bottom: -1px;
   transform: translatey(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+  .overlay {
+    padding: 49px 24px 77px 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .overlay {
+    padding: 63px 24px;
+  }
 }
 
 .examples-description {

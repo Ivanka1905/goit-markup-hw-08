@@ -1,6 +1,8 @@
 /* шапка сайту */
 .header {
+    position: relative;
     display: flex;
+    height: 60px;
     align-items: center;
     .link:hover,
     .link:focus {
@@ -21,8 +23,12 @@
     color: var(--accent-color);
     font-family: $secondaryfont;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 1.2;
+    font-size: 24px;
+    line-height: 1.17;  
+    @media screen and (min-width: 1200px) {
+        font-size: 26px;
+        line-height: 1.19;
+        }
 }
 
 .logo__studio--black {
@@ -40,17 +46,40 @@
 }
 
 .site-nav {
-    display: flex;
-    color: var(--title-text-color);
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    li {
-    margin-right: 50px;
-}
-    li:last-child {
-    margin-right: 0;
-}
+    display: none;
+
+    @media screen and (min-width: 768px) {
+            display: flex;
+                color: var(--title-text-color);
+                font-weight: 500;
+                line-height: 1.14;
+                letter-spacing: 0.02em;
+            
+                li {
+                    margin-right: 50px;
+                }
+            
+                li:last-child {
+                    margin-right: 0;
+                }
+        }
+    
+        @media screen and (min-width: 1200px) {
+            display: flex;
+                color: var(--title-text-color);
+                font-weight: 500;
+                line-height: 1.14;
+                letter-spacing: 0.02em;
+            
+                li {
+                    margin-right: 50px;
+                }
+            
+                li:last-child {
+                    margin-right: 0;
+                }
+        }
+   
 }
 
 .site-nav__item {
@@ -61,6 +90,8 @@
 
 .active-page {
     color: var(--accent-color);
+
+    @media screen and (min-width: 768px) {
     position: relative;
     &::after {
             content: "";
@@ -72,10 +103,13 @@
             height: 4px;
             background-color: var(--accent-color);
             border-radius: 2px;
-        }
+        }}
 }
 
 .contacts {
+    display: none;
+
+    @media screen and (min-width: 768px) {
     display: flex;
     margin-left: auto;
     align-items: center;
@@ -86,6 +120,22 @@
     li:first-child {
     margin-right: 50px;
 }
+        }
+    
+        @media screen and (min-width: 1200px) {
+            display: flex;
+                margin-left: auto;
+                align-items: center;
+                justify-content: center;
+                font-weight: 500;
+                line-height: 1.14;
+                letter-spacing: 0.02em;
+            
+                li:first-child {
+                    margin-right: 50px;
+                }
+        }
+    
 }
 
 .contacts__link {
